@@ -143,4 +143,8 @@
     <string name="left_default_voice_summary_on">Default shortcut on lockscreen is voice assistant</string>
     <string name="left_default_voice_summary_off">Default shortcut on lockscreen is phone</string>
 
+    <!-- Show bluetooth icon when disconnected -->
+    <string name="status_bar_bluetooth_icon">Bluetooth icon</string>
+    <string name="status_bar_bluetooth_icon_summary">Shows icon when it is enabled but not connected</string>
+
 </resources>
