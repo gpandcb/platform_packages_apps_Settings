@@ -13,17 +13,13 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- About phone screen, Bliss version -->
-    <string name="bliss_version">Bliss version</string>
-    <string name="bliss_version_default">Unknown</string>
+<resources>
 
-    <!-- Bliss Settings -->
-    <string name="header_category_bliss_options">Bliss Options</string>
-    <string name="bliss_settings_title">Bliss Settings</string>
-
-    <!-- Status bar-->
-    <string name="status_bar_title">Status Bar</string>
+    <style name="TextAppearance.PagerTabsSystemSettings" parent="@android:style/TextAppearance.DeviceDefault.Small">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>

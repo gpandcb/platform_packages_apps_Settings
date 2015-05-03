@@ -14,16 +14,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
-    <!-- About phone screen, Bliss version -->
-    <string name="bliss_version">Bliss version</string>
-    <string name="bliss_version_default">Unknown</string>
-
-    <!-- Bliss Settings -->
-    <string name="header_category_bliss_options">Bliss Options</string>
-    <string name="bliss_settings_title">Bliss Settings</string>
-
-    <!-- Status bar-->
-    <string name="status_bar_title">Status Bar</string>
+    <color name="theme_accent">#ff009688</color>
+    <color name="background_tab_pressed">#1AFFFFFF</color>
+    <color name="material_deep_teal_500">@*android:color/material_deep_teal_500</color>
 
 </resources>
