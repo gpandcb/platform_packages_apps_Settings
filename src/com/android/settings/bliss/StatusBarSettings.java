@@ -47,13 +47,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 		// preference changes here
         return false;
     }
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
- 		return super.onPreferenceTreeClick(preferenceScreen, preference);
-    	}
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.STATUSBAR_SETTINGS;
+        return MetricsEvent.STATUSBAR_SETTINGS;
     }
 }

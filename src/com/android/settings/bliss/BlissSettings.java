@@ -16,62 +16,61 @@
 
 package com.android.settings.bliss;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.support.v13.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.settings.bliss.StatusBarSettings;
-import com.android.internal.logging.MetricsProto.MetricsEvent;
-
+import com.android.settings.bliss.PagerSlidingTabStrip;
 import com.android.settings.R;
+import com.android.settings.Utils;
 import com.android.settings.SettingsPreferenceFragment;
+
+import com.android.internal.logging.MetricsProto.MetricsEvent;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BlissSettings extends SettingsPreferenceFragment {
 
-    PagerTabStrip mPagerTabStrip;
     ViewPager mViewPager;
-
     String titleString[];
-
     ViewGroup mContainer;
+    PagerSlidingTabStrip mTabs;
 
     static Bundle mSavedState;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContainer = container;
+	final ActionBar actionBar = getActivity().getActionBar();
+        actionBar.setIcon(R.drawable.ic_settings_bliss);
 
         View view = inflater.inflate(R.layout.bliss_settings, container, false);
-        mViewPager = (ViewPager) view.findViewById(R.id.viewPager);
-        mPagerTabStrip = (PagerTabStrip) view.findViewById(R.id.pagerTabStrip);
-        mPagerTabStrip.setDrawFullUnderline(true);
+        mViewPager = (ViewPager) view.findViewById(R.id.pager);
+	mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
 
         StatusBarAdapter StatusBarAdapter = new StatusBarAdapter(getFragmentManager());
         mViewPager.setAdapter(StatusBarAdapter);
-
+       
+	mTabs.setViewPager(mViewPager);
+        setHasOptionsMenu(true);
         return view;
     }
 
-    @Override
+   @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         // After confirming PreferenceScreen is available, we call super.
         super.onActivityCreated(savedInstanceState);
@@ -85,6 +84,7 @@ public class BlissSettings extends SettingsPreferenceFragment {
     @Override
     public void onResume() {
         super.onResume();
+            mContainer.setPadding(0, 0, 0, 0);
     }
 
     class StatusBarAdapter extends FragmentPagerAdapter {
@@ -93,7 +93,8 @@ public class BlissSettings extends SettingsPreferenceFragment {
 
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new StatusBarSettings();
+	    frags[0] = new StatusBarSettings();
+          
         }
 
         @Override
@@ -115,12 +116,12 @@ public class BlissSettings extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                    getString(R.string.status_bar_title)};
+		    getString(R.string.status_bar_title)};
         return titleString;
     }
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.BLISS_SETTINGS;
+        return MetricsEvent.BLISS_SETTINGS;
     }
 }
