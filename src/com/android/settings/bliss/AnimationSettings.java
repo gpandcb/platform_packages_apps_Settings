@@ -41,6 +41,7 @@ import com.android.settings.bliss.AnimBarPreference;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.internal.util.bliss.AwesomeAnimationHelper;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -107,14 +108,14 @@ public class AnimationSettings extends SettingsPreferenceFragment implements OnP
         mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
         mToastAnimation.setOnPreferenceChangeListener(this);
 
-        mListViewAnimation = (ListPreference) prefSet.findPreference(KEY_LISTVIEW_ANIMATION);
+        mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
         int listviewanimation = Settings.System.getInt(getContentResolver(),
                 Settings.System.LISTVIEW_ANIMATION, 0);
         mListViewAnimation.setValue(String.valueOf(listviewanimation));
         mListViewAnimation.setSummary(mListViewAnimation.getEntry());
         mListViewAnimation.setOnPreferenceChangeListener(this);
 
-        mListViewInterpolator = (ListPreference) prefSet.findPreference(KEY_LISTVIEW_INTERPOLATOR);
+        mListViewInterpolator = (ListPreference) findPreference(KEY_LISTVIEW_INTERPOLATOR);
         int listviewinterpolator = Settings.System.getInt(getContentResolver(),
                 Settings.System.LISTVIEW_INTERPOLATOR, 0);
         mListViewInterpolator.setValue(String.valueOf(listviewinterpolator));
