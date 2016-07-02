@@ -138,4 +138,9 @@
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
+    <!-- Default left shortcut on lockscreen -->
+    <string name="left_default_voice_title">Voice assist as default left shortcut</string>
+    <string name="left_default_voice_summary_on">Default shortcut on lockscreen is voice assistant</string>
+    <string name="left_default_voice_summary_off">Default shortcut on lockscreen is phone</string>
+
 </resources>
