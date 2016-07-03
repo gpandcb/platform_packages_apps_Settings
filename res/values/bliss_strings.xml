@@ -23,7 +23,12 @@
     <string name="header_category_bliss_options">Bliss Options</string>
     <string name="bliss_settings_title">Bliss Settings</string>
 
-    <!-- Status bar-->
+    <!-- Status bar -->
     <string name="status_bar_title">Status Bar</string>
+
+    <!-- Three finger screenshot gesture -->
+    <string name="gestures_title">Gestures</string>
+    <string name="three_finger_gesture">Three finger gesture</string>
+    <string name="three_finger_gesture_summary">Swipe three fingers to take a screenshot</string>
 
 </resources>
