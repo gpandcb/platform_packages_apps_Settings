@@ -33,6 +33,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.settings.bliss.AnimationSettings;
 import com.android.settings.bliss.StatusBarSettings;
 import com.android.settings.bliss.PagerSlidingTabStrip;
 import com.android.settings.R;
@@ -93,7 +94,8 @@ public class BlissSettings extends SettingsPreferenceFragment {
 
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
-	    frags[0] = new StatusBarSettings();
+	    frags[0] = new AnimationSettings();
+	    frags[1] = new StatusBarSettings();
           
         }
 
@@ -116,6 +118,7 @@ public class BlissSettings extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
+		    getString(R.string.animation_settings_title),
 		    getString(R.string.status_bar_title)};
         return titleString;
     }
