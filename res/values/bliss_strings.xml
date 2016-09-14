@@ -27,7 +27,6 @@
     <string name="status_bar_title">Status Bar</string>
 
     <!-- Three finger screenshot gesture -->
-    <string name="gestures_title">Gestures</string>
     <string name="three_finger_gesture">Three finger gesture</string>
     <string name="three_finger_gesture_summary">Swipe three fingers to take a screenshot</string>
 
@@ -109,5 +108,8 @@
     <!-- Screenshot sound -->
     <string name="screenshot_sound_title">Screenshot sound</string>
     <string name="screenshot_sound_summary">Plays sound effect when screenshot is taken</string>
+
+    <!-- Gesture Settings -->
+    <string name="gesture_settings_title">Gesture Anywhere</string>
 
 </resources>
